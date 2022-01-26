@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="residents-wrapper row">
+        <div *ngIf="residents.length == 0">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h5>There are not residents to show</h5>
+        </div>
+        <div class="col" *ngFor="let resident of residents">
+            <div class="actor-name text-white resident-description">
+                <div class="mt-5">
+                    <img [src]="resident.image" alt="resident.name" style="cursor: pointer;" (click)="onCharacterClick(resident.id)">
+                    <h5>{{ resident.name}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+<swiper #swiper [virtual]=" true " effect="fade " [config]="config " (swiper)="onSwiper($event) " (slideChange)="onSlideChange() ">
+    <ng-template class="col " swiperSlide *ngFor="let resident of residents ">
+        <div class="text-white ">
+            <img [src]="resident.image " alt="resident.name " class="img-thumbnail "> {{ resident.name}}
+        </div>
+    </ng-template>
+</swiper>
+-->

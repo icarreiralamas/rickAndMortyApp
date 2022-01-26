@@ -1,0 +1,12 @@
+<app-slide-show></app-slide-show>
+
+
+<div class="containter">
+    <h1 class="mt-5 md-5">Characters</h1>
+
+    <div *ngIf="cargando">
+        <span><i class="fas fa-spinner fa-spin"></i></span>
+    </div>
+
+    <app-poster-grid [characters]="characters" *ngIf="characters.length > 0"></app-poster-grid>
+</div>

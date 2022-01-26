@@ -1,0 +1,24 @@
+<app-slide-show></app-slide-show>
+
+<h1 class="mt-5">Universe Locations</h1>
+
+<table class="table table-dark table-wrapper" style="margin-top: 1em;">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Dimension</th>
+            <th scope="col">Residents</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let location of locations | orderBy:'name'">
+            <th scope="row">{{location.name}}</th>
+            <td>{{location.type}}</td>
+            <td>{{location.dimension}}</td>
+            <td><button class="btn btn-outline-info" (click)="getResidents(location.id)">
+                Show Residents
+            </button></td>
+        </tr>
+    </tbody>
+</table>

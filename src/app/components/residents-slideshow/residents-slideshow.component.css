@@ -1,0 +1,29 @@
+img {
+    border-radius: 10%;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+
+/*
+.resident-description {
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 100px;
+    bottom: 0;
+    padding: 5px 30px;
+    position: absolute;
+    width: 100%;
+}
+*/
+
+
+/*
+.resident-description {
+    text-align: center;
+}
+*/
+
+img:hover {
+    transform: scale(1.025);
+    box-shadow: 2px 2px #2a9ead;
+}

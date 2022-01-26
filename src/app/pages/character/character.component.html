@@ -1,0 +1,76 @@
+<div class="row" *ngIf="character">
+    <div class="col-md-6 mt-5">
+        <img [src]="character.image" [alt]="" class="img-thumbnail">
+    </div>
+    <div class="col-md-6 mt-5">
+        <h3><strong>{{character.name}}</strong></h3>
+        <div class="row mt-3">
+            <div class="col text-white">
+                <strong>Gender:</strong> {{character.gender}}
+            </div>
+            <div class="row mt-3">
+                <div class="col text-white">
+                    <strong>Species:</strong> {{character.species}}
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col text-white">
+                    <div *ngIf="character.status == 'Alive'">
+                        <label><span class="badge badge-pill badge-success">Alive</span></label>
+                    </div>
+                    <div *ngIf="character.status == 'Dead'">
+                        <label><span class="badge badge-pill badge-danger">Dead</span></label>
+                    </div>
+                    <div *ngIf="character.status != 'Alive' && character.status != 'Dead'">
+                        <label><span class="badge badge-pill badge-unknown">Unknown</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col text-white">
+                    <strong>Origin: </strong> {{character.origin.name}}
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col text-white">
+                    <strong>Last know location:</strong> {{character.location.name}}
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col text-white">
+                    <strong>Episodes:</strong>
+                </div>
+            </div>
+
+            <table class="table table-dark table-wrapper" style="margin-top: 1em;">
+                <thead>
+                    <tr>
+                        <th scope="col">Episode Code</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Air Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let episode of episodeInfo | orderBy:'episode'">
+                        <th scope="row">{{episode.episode}}</th>
+                        <td>{{episode.name}}</td>
+                        <td>{{episode.air_date}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="row mt-5">
+            <div class="col">
+                <button class="btn btn-outline-info" (click)="onReturn()">
+                Volver
+            </button>
+            </div>
+        </div>
+
+    </div>
+</div>

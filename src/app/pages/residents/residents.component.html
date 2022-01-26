@@ -1,0 +1,17 @@
+<div class="container mt-5">
+    <h1>Location Info</h1>
+    <div class="row mt-5">
+        <div class="col">
+            <h2>Planet: {{location.name}}</h2>
+            <h5>Type: {{location.type}}</h5>
+            <h5>Dimension: {{location.dimension}}</h5>
+            <h5>Residents: </h5>
+            <div>
+                <div class="col">
+                    <app-residents-slideshow [residents]="residentsArray"></app-residents-slideshow>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

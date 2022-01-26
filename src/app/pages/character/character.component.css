@@ -1,0 +1,21 @@
+.badge-success {
+    background-color: green;
+}
+
+.badge-danger {
+    background-color: red;
+}
+
+.badge-unknown {
+    background-color: grey;
+}
+
+.col-md-6 {
+    width: 30% !important;
+}
+
+.table-wrapper {
+    max-height: 200px;
+    overflow: auto;
+    display: inline-block;
+}
